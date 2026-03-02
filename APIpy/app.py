@@ -17,8 +17,6 @@ def predict():
 
     # 1. Preprocessing teks
     processed = preprocess(text)
-    #print("Original:", text)
-    #print(preprocess("Processed (VSCode): SLMT!! No Anda men-dpt hadiah dr:pengundian PT.TELKOMSEL No pin b89c7... Untuk melihat Hadiah Anda, silakan klik : www.telkomselpoin2222.webs.com"))
 
     # 2. TF-IDF vektorisasi
     tfidf_features = vectorizer.transform([processed]).toarray()  # shape: (1, 4889)
@@ -38,8 +36,6 @@ def predict():
     print("URL:", url_features)
     print("Final shape:", all_features.shape)
     print("Split processed words:", processed.split())  # tambahan: untuk cek isinya
-    #print(preprocess("Selamat!anda m-dptkan Hadiah Cek Tunai Rp. 15jt dari INDOSAT Pin_anda 277fg49 U/info pengambilan Hadiah kunjungi website indosat www.hadiah-indosat.blogspot.com"))
-
 
     # 5. Prediksi
     prediction = model.predict(all_features)
